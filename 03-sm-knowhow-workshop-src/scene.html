@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>SM 노하우 전수 워크숍 60s</title>
+<style>
+:root{--navy:#0B1830;--navy2:#13264A;--teal:#00968F;--teal2:#2CC4B8;--blue:#0070C0;--sky:#5DB5FF;--orange:#F07B1E;--ink:#F4F7FB;--mute:#AFC0D8}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--navy);font-family:"WenQuanYi Zen Hei",sans-serif;color:var(--ink)}
+.sc{position:absolute;inset:0;opacity:0}
+.abs{position:absolute}
+.bgimg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:brightness(.32) saturate(.8) blur(2px)}
+.grad{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(19,38,74,.15),rgba(11,24,48,.85) 75%)}
+.kicker{font-size:34px;letter-spacing:6px;color:var(--teal2)}
+.h1{font-size:118px;font-weight:bold;letter-spacing:-2px;line-height:1.1}
+.h2{font-size:72px;font-weight:bold;line-height:1.2}
+.sub{font-size:44px;color:var(--mute)}
+.bar{height:10px;display:flex}
+.bar i{display:block;height:100%}
+.chip{display:inline-block;padding:10px 26px;border-radius:40px;font-size:30px;background:rgba(0,150,143,.18);border:2px solid var(--teal);color:var(--teal2)}
+.card{position:absolute;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:44px 46px}
+.num{font-size:150px;font-weight:bold;line-height:1;color:var(--ink)}
+.lbl{font-size:34px;color:var(--mute);margin-top:14px}
+.hero{position:absolute;width:390px;height:520px;border-radius:26px;background:linear-gradient(160deg,#0B5FA8,#063D73);box-shadow:0 30px 60px rgba(0,0,0,.45);padding:40px 34px;overflow:hidden}
+.hero .L{font-size:170px;font-weight:bold;line-height:1;color:#fff}
+.hero .n{font-size:34px;font-weight:bold;margin-top:26px;color:#fff}
+.hero .d{font-size:28px;margin-top:14px;color:#CFE3FF;line-height:1.45}
+.hero .tag{position:absolute;left:34px;bottom:34px;font-size:24px;color:var(--teal2);letter-spacing:2px}
+.photo{position:absolute;left:250px;top:150px;width:1420px;height:680px;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.55)}
+.photo div{position:absolute;inset:0;background-size:cover;background-position:center}
+.cap{position:absolute;left:250px;top:870px;font-size:52px;font-weight:bold}
+.cap small{display:block;font-size:32px;font-weight:normal;color:var(--mute);margin-top:10px}
+.step{position:absolute;width:520px;top:430px;height:420px}
+.step .no{font-size:30px;color:var(--teal2);letter-spacing:4px}
+.step .t{font-size:52px;font-weight:bold;margin-top:14px}
+.step .d{font-size:32px;color:var(--mute);margin-top:22px;line-height:1.5}
+.arrow{position:absolute;top:610px;width:60px;height:4px;background:var(--teal)}
+.h1,.h2,.num,.hero .L,.hero .n,.step .t,.cap,.quote,b,#s2n,#s8b{-webkit-text-stroke:.035em currentColor}
+.h1{-webkit-text-stroke:3px currentColor}
+.quote{font-size:76px;font-weight:bold;line-height:1.3}
+</style></head><body>
+
+<!-- S1 Intro 0-6 -->
+<div class="sc" id="s1">
+  <div class="bgimg" id="s1bg" style="background-image:url(img/heromap.jpg);filter:brightness(.2) saturate(.7) blur(10px)"></div><div class="grad"></div>
+  <div class="abs kicker" id="s1k" style="left:160px;top:300px">2025 · M&amp;M본부 · 영업교육Project팀</div>
+  <div class="abs h1" id="s1t" style="left:160px;top:370px">SM 노하우 전수 워크숍</div>
+  <div class="abs bar" id="s1bar" style="left:160px;top:530px;width:0"><i style="width:30%;background:var(--teal)"></i><i style="width:70%;background:#7D8796"></i></div>
+  <div class="abs sub" id="s1s" style="left:160px;top:580px">GS 영웅의 여정 <span style="color:var(--teal2)">Hero's Journey</span></div>
+  <div class="abs" id="s1d" style="left:160px;top:670px;font-size:32px;color:var(--mute)">1박 2일 · 13시간 · 2차수 · SM 43명</div>
+</div>
+
+<!-- S2 Why 6-13 -->
+<div class="sc" id="s2">
+  <div class="abs kicker" id="s2k" style="left:160px;top:200px">WHY · 추진 배경</div>
+  <div class="abs" id="s2n" style="left:150px;top:270px;font-size:300px;font-weight:bold;line-height:1;color:var(--orange)">0%</div>
+  <div class="abs h2" id="s2a" style="left:160px;top:600px">시니어 SM 비중, <span style="color:var(--orange)">5년 내 퇴직</span></div>
+  <div class="abs" id="s2b" style="left:160px;top:720px;font-size:46px;color:var(--mute);line-height:1.6">
+    현장에서 쌓아온 경험과 통찰이<br><span style="color:var(--ink)">조직에서 사라질 위기</span>에 놓여 있습니다.</div>
+  <div class="abs" id="s2c" style="right:160px;top:300px;width:620px">
+    <div class="card" style="position:relative;margin-bottom:26px" id="s2c1"><div style="font-size:36px;font-weight:bold">경험 자산의 소실 가속화</div></div>
+    <div class="card" style="position:relative;margin-bottom:26px" id="s2c2"><div style="font-size:36px;font-weight:bold">주니어 역량의 한계</div></div>
+    <div class="card" style="position:relative" id="s2c3"><div style="font-size:36px;font-weight:bold">경험 축적 시스템의 부재</div></div>
+  </div>
+</div>
+
+<!-- S3 How 13-21 -->
+<div class="sc" id="s3">
+  <div class="abs kicker" id="s3k" style="left:160px;top:170px">HOW · 추진 방법</div>
+  <div class="abs h2" id="s3t" style="left:160px;top:225px">경험을 <span style="color:var(--teal2)">데이터</span>로, 노하우를 <span style="color:var(--teal2)">교육</span>으로</div>
+  <div class="step" id="st1" style="left:160px"><div class="no">STEP 01 · 분석</div><div class="t">1:1 심층 인터뷰</div><div class="d">시니어·주니어 SM <b style="color:var(--ink)">31명</b><br>C.A.L.T.E.X. Insight Model</div></div>
+  <div class="arrow" id="ar1" style="left:665px"></div>
+  <div class="step" id="st2" style="left:760px"><div class="no">STEP 02 · 설계</div><div class="t">영웅의 여정 설계</div><div class="d">Hero's Journey 기반<br>H.E.R.O. 워크숍 모델</div></div>
+  <div class="arrow" id="ar2" style="left:1265px"></div>
+  <div class="step" id="st3" style="left:1360px"><div class="no">STEP 03 · 실행</div><div class="t">워크숍 2차수</div><div class="d">1박 2일 · 13시간<br>M&amp;M본부 SM <b style="color:var(--ink)">43명</b> 이수</div></div>
+</div>
+
+<!-- S4 HERO 21-30 -->
+<div class="sc" id="s4">
+  <div class="bgimg" id="s4bg" style="background-image:url(img/heromap.jpg);filter:brightness(.22) saturate(.7) blur(6px)"></div>
+  <div class="abs kicker" id="s4k" style="left:160px;top:130px">WORKSHOP MODEL</div>
+  <div class="abs h2" id="s4t" style="left:160px;top:180px">H.E.R.O. — 시니어 SM, 영웅의 여정</div>
+  <div class="hero" id="h1" style="left:160px;top:380px"><div class="L">H</div><div class="n">Heritage &amp; Honor</div><div class="d">경험 가치 인식<br>사명감·참여 동기</div><div class="tag">출발</div></div>
+  <div class="hero" id="h2" style="left:576px;top:380px"><div class="L">E</div><div class="n">Evidence of Reflection</div><div class="d">상황의 예측·해석<br>관찰·성찰 사례 도출</div><div class="tag">위기</div></div>
+  <div class="hero" id="h3" style="left:992px;top:380px"><div class="L">R</div><div class="n">Resolution by Insight</div><div class="d">신뢰·관계형성·대응<br>통찰 요인 도출</div><div class="tag">극복</div></div>
+  <div class="hero" id="h4" style="left:1408px;top:380px;background:linear-gradient(160deg,#00968F,#00635E)"><div class="L">O</div><div class="n">Outreach for the future</div><div class="d">SME 활동·스킬 전수<br>실행 의지와 계획</div><div class="tag" style="color:#D6FFF9">귀환</div></div>
+</div>
+
+<!-- S5 Montage 30-42 -->
+<div class="sc" id="s5">
+  <div class="bgimg" id="s5bg" style="filter:brightness(.25) blur(30px)"></div>
+  <div class="abs kicker" id="s5k" style="left:250px;top:85px">WORKSHOP SCENE · 현장</div>
+  <div class="photo" id="ph"><div id="ph1"></div><div id="ph2"></div></div>
+  <div class="cap" id="cap"></div>
+</div>
+
+<!-- S6 Output 42-50 -->
+<div class="sc" id="s6">
+  <div class="abs kicker" id="s6k" style="left:160px;top:150px">WHAT · 핵심 성과</div>
+  <div class="abs h2" id="s6t" style="left:160px;top:205px">현장의 노하우를 데이터로 남기다</div>
+  <div class="card" id="m1" style="left:160px;top:400px;width:375px;height:440px"><div class="num" data-v="164">0</div><div class="lbl">SM 행동기준 의견<br><span style="font-size:28px">DO 85 · DON'T 79</span></div></div>
+  <div class="card" id="m2" style="left:565px;top:400px;width:375px;height:440px"><div class="num" data-v="88">0</div><div class="lbl">현장 관찰 사례<br><span style="font-size:28px">관찰 → 해석 → 실행</span></div></div>
+  <div class="card" id="m3" style="left:970px;top:400px;width:375px;height:440px"><div class="num" data-v="40">0</div><div class="lbl">스토리 기반 사례<br><span style="font-size:28px">경험 스토리텔링</span></div></div>
+  <div class="card" id="m4" style="left:1375px;top:400px;width:385px;height:440px"><div class="num" data-v="71">0</div><div class="lbl">SM 자산(무기)<br><span style="font-size:28px">활용·습득 방법</span></div></div>
+</div>
+
+<!-- S7 Satisfaction 50-56 -->
+<div class="sc" id="s7">
+  <div class="abs kicker" id="s7k" style="left:160px;top:180px">참여자 평가 · 35명 응답</div>
+  <div class="abs" id="s7a" style="left:160px;top:250px"><span class="num" id="sat" style="font-size:220px;color:var(--teal2)">0.00</span><span style="font-size:60px;color:var(--mute)"> / 5.0</span><div class="lbl" style="font-size:40px">종합 만족도</div></div>
+  <div class="abs" id="s7b" style="left:900px;top:250px"><span class="num" id="nps" style="font-size:220px;color:var(--sky)">0.00</span><span style="font-size:60px;color:var(--mute)"> / 10</span><div class="lbl" style="font-size:40px">순추천지수 (NPS)</div></div>
+  <div class="abs quote" id="s7q" style="left:160px;top:690px">“최고의 무기는 <span style="color:var(--orange)">동료</span>입니다.”</div>
+  <div class="abs" id="s7q2" style="left:164px;top:810px;font-size:34px;color:var(--mute)">— 워크숍 참여 SM 정성의견 중</div>
+</div>
+
+<!-- S8 Closing 56-60 -->
+<div class="sc" id="s8">
+  <div class="bgimg" id="s8bg" style="background-image:url(img/wall44.jpg);filter:brightness(.28) saturate(.9) blur(3px)"></div><div class="grad"></div>
+  <div class="abs" id="s8a" style="left:0;right:0;top:330px;text-align:center;font-size:48px;color:var(--mute)">경험을 개인의 업적에서</div>
+  <div class="abs" id="s8b" style="left:0;right:0;top:405px;text-align:center;font-size:104px;font-weight:bold">조직의 <span style="color:var(--teal2)">유산</span>으로</div>
+  <div class="abs" id="s8c" style="left:0;right:0;top:590px;text-align:center"><span class="chip" style="border-color:var(--orange);color:#FFB67A;background:rgba(240,123,30,.15)">’26 스킬 전이 Work Flow 구축 · 콘텐츠 + 시스템</span></div>
+  <div class="abs" id="s8d" style="left:0;right:0;top:760px;text-align:center;font-size:34px;color:var(--mute);letter-spacing:3px">2025 SM 노하우 전수 워크숍 · 영업교육Project팀</div>
+</div>
+
+<div class="abs" id="fadeblack" style="inset:0;background:#000;opacity:1"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const vis=(t,a,b,d=.6)=>Math.min(cl((t-a)/d),cl((b-t)/d));
+function enter(el,t,a,{d=.8,dy=40,dx=0,s=0}={}){const p=eo((t-a)/d);el.style.opacity=p;el.style.transform=`translate(${dx*(1-p)}px,${dy*(1-p)}px) scale(${1-s*(1-p)})`;}
+const SC=[['s1',0,6.2],['s2',6,13.2],['s3',13,21.2],['s4',21,30.2],['s5',30,42.2],['s6',42,50.2],['s7',50,56.2],['s8',56,60.5]];
+const PH=[['img/hands.jpg','도시 탈출 GS 칼텍쇼!','영웅부루마블 · 성공/실패 경험 Talk'],
+          ['img/chars33.jpg','SM 영웅의 자화상','이상적인 SM 페르소나 · 캐릭터 제작'],
+          ['img/brainstorm.jpg','일을 망치는 완벽한 방법','역브레인스토밍으로 SM 행동기준 도출'],
+          ['img/signal.jpg','GS 시그널 탐사대','현장 사진 속 관찰 → 해석 → 실행'],
+          ['img/wall44.jpg','Wall of Legends','후배에게 남기는 시니어의 메시지']];
+let lastPh=-1;
+function render(t){
+  $('fadeblack').style.opacity=Math.max(1-cl(t/0.8),cl((t-58.8)/1.2));
+  for(const [id,a,b] of SC) $(id).style.opacity=vis(t,a,b,.5);
+  // S1
+  $('s1bg').style.transform=`scale(${1.05+0.08*cl(t/6.5)})`;
+  enter($('s1k'),t,.6); enter($('s1t'),t,1.0,{d:1,dy:60});
+  $('s1bar').style.width=(900*eio((t-1.8)/1.2))+'px';
+  enter($('s1s'),t,2.4); enter($('s1d'),t,3.2);
+  // S2
+  enter($('s2k'),t,6.3);
+  const n=Math.round(80*eo((t-6.5)/1.6)); $('s2n').textContent=n+'%'; $('s2n').style.opacity=cl((t-6.4)/.4);
+  enter($('s2a'),t,7.6); enter($('s2b'),t,8.6);
+  ['s2c1','s2c2','s2c3'].forEach((id,i)=>enter($(id),t,9.4+i*.45,{dx:80,dy:0}));
+  // S3
+  enter($('s3k'),t,13.3); enter($('s3t'),t,13.6);
+  enter($('st1'),t,14.5,{dy:60}); $('ar1').style.width=(60*eo((t-15.6)/.5))+'px';
+  enter($('st2'),t,16.0,{dy:60}); $('ar2').style.width=(60*eo((t-17.1)/.5))+'px';
+  enter($('st3'),t,17.5,{dy:60});
+  // S4
+  $('s4bg').style.transform=`scale(${1.05+0.06*cl((t-21)/9)}) translateX(${-30*cl((t-21)/9)}px)`;
+  enter($('s4k'),t,21.3); enter($('s4t'),t,21.6);
+  ['h1','h2','h3','h4'].forEach((id,i)=>{enter($(id),t,22.6+i*0.9,{dy:120,s:.08,d:.9});});
+  // S5 montage: 5 photos x 2.4s, starting 30.0
+  enter($('s5k'),t,30.2);
+  const lt=t-30, idx=Math.max(0,Math.min(4,Math.floor(lt/2.4))), lp=lt-idx*2.4;
+  if(idx!==lastPh){ $('ph2').style.backgroundImage=$('ph1').style.backgroundImage; $('ph1').style.backgroundImage=`url(${PH[idx][0]})`;
+    $('s5bg').style.backgroundImage=`url(${PH[idx][0]})`; $('s5bg').style.backgroundSize='cover';
+    $('cap').innerHTML=PH[idx][1]+'<small>'+PH[idx][2]+'</small>'; lastPh=idx; }
+  const xf=idx===0?1:cl(lp/.5);
+  $('ph1').style.opacity=xf; $('ph2').style.opacity=1;
+  $('ph1').style.transform=`scale(${1.02+0.07*cl(lp/2.9)})`;
+  $('ph2').style.transform='scale(1.078)'; $('ph1').style.zIndex=2; $('ph2').style.zIndex=1;
+  enter($('ph'),t,30.1,{dy:50,s:.03});
+  enter($('cap'),lp+100,100.15,{dy:24,d:.6});
+  // S6
+  enter($('s6k'),t,42.2); enter($('s6t'),t,42.5);
+  ['m1','m2','m3','m4'].forEach((id,i)=>{const a=43.3+i*.45; enter($(id),t,a,{dy:80});
+    const el=$(id).querySelector('.num'); el.textContent=Math.round(+el.dataset.v*eo((t-a)/1.6));});
+  // S7
+  enter($('s7k'),t,50.2); enter($('s7a'),t,50.5); enter($('s7b'),t,51.0);
+  $('sat').textContent=(4.92*eo((t-50.5)/1.5)).toFixed(2); $('nps').textContent=(9.60*eo((t-51.0)/1.5)).toFixed(2);
+  enter($('s7q'),t,52.6,{dy:50}); enter($('s7q2'),t,53.3);
+  // S8
+  $('s8bg').style.transform=`scale(${1.04+0.05*cl((t-56)/4)})`;
+  enter($('s8a'),t,56.2); enter($('s8b'),t,56.6,{dy:50,s:.04}); enter($('s8c'),t,57.3); enter($('s8d'),t,57.8);
+}
+window.render=render; render(0);
+</script>
+</body></html>
