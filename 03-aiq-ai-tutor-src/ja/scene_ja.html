@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>M&amp;M AiQ+ 120s</title>
+<style>
+:root{--bg:#F5F8FB;--navy:#1F3A5F;--navy2:#2B4C78;--teal:#13A89E;--teal2:#0E8C84;--tealbg:#E6F6F4;--ink:#1B2B40;--mute:#6B7A90;--line:#DCE3EC;--red:#E05A47}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);font-family:"IPAPGothic","IPAGothic","Noto Color Emoji",sans-serif;color:var(--ink)}
+.sc{position:absolute;inset:0;opacity:0}
+.abs{position:absolute}
+.kicker{font-size:30px;letter-spacing:5px;color:var(--teal)}
+.h1{font-size:120px;line-height:1.1}
+.h2{font-size:66px;line-height:1.25;color:var(--navy)}
+.sub{font-size:42px;color:var(--mute)}
+.card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:26px;padding:40px 44px;box-shadow:0 18px 40px rgba(31,58,95,.08)}
+.voice{position:absolute;left:160px;width:870px;background:var(--tealbg);border:2px solid var(--teal);border-radius:30px;padding:30px 36px;font-size:34px;white-space:nowrap;color:var(--navy);font-style:italic}
+.tobe{position:absolute;left:1140px;width:620px;background:#fff;border:2px solid var(--teal);border-radius:24px;padding:31px 34px;font-size:34px;white-space:nowrap;color:var(--navy)}
+.arrow{position:absolute;left:1055px;font-size:60px;color:var(--teal)}
+.band{position:absolute;left:160px;right:160px;background:var(--navy);color:#fff;border-radius:22px;padding:30px 44px;font-size:42px}
+.band:before{content:"";display:inline-block;width:8px;height:40px;background:var(--teal);margin-right:24px;vertical-align:-6px}
+.node{position:absolute;width:370px;height:70px;margin:-35px 0 0 -185px;white-space:nowrap;background:#fff;border:1.5px solid var(--line);border-radius:16px;display:flex;align-items:center;padding:0 16px;font-size:23px;color:var(--navy);box-shadow:0 8px 20px rgba(31,58,95,.07)}
+.node b{display:inline-block;min-width:46px;height:36px;border-radius:9px;background:var(--teal);color:#fff;font-size:22px;text-align:center;line-height:36px;margin-right:12px;-webkit-text-stroke:0}
+.hub{position:absolute;left:960px;top:600px;width:280px;height:280px;margin:-140px 0 0 -140px;border-radius:50%;background:var(--teal);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 22px rgba(19,168,158,.15),0 0 0 44px rgba(19,168,158,.07)}
+.way{position:absolute;top:400px;width:500px;height:470px}
+.way .as{background:#E9EDF2;border-radius:18px;padding:26px 30px;font-size:28px;color:var(--mute);font-style:italic;height:150px}
+.way .bx{margin-top:34px;background:#fff;border:2px solid var(--teal);border-radius:22px;padding:30px 34px;height:240px}
+.way .no{font-size:24px;color:var(--teal);letter-spacing:3px}
+.way .t{font-size:62px;color:var(--navy);margin-top:10px}
+.way .d{font-size:30px;color:var(--mute);margin-top:12px}
+.chat{position:absolute;left:640px;top:140px;width:1120px;height:860px;background:#fff;border:2px solid #9AA8BD;border-radius:44px;overflow:hidden;box-shadow:0 30px 60px rgba(31,58,95,.12)}
+.chat .bar{position:relative;z-index:3;background:#fff;height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 36px;font-size:28px;color:var(--navy)}
+.msgs{position:absolute;left:0;right:0;top:78px;bottom:0;padding:30px 44px}
+.msg{opacity:0;margin-bottom:26px}
+.me{margin-left:auto;max-width:640px;background:#EEF2F7;border-radius:26px 26px 6px 26px;padding:22px 30px;font-size:32px;color:var(--navy);width:fit-content}
+.bot{display:flex;gap:18px;max-width:960px}
+.bot .av{flex:none;width:62px;height:62px;border-radius:50%;background:var(--tealbg);font-size:38px;display:flex;align-items:center;justify-content:center}
+.bot .tx{background:#F7F9FB;border:1px solid var(--line);border-radius:6px 26px 26px 26px;padding:22px 30px;font-size:29px;line-height:1.55;color:var(--ink)}
+.bot .tx em{font-style:normal;color:var(--teal2)}
+.dots span{display:inline-block;width:12px;height:12px;border-radius:50%;background:#9AA8BD;margin-right:8px}
+.side{position:absolute;left:160px;width:420px}
+.side .s{margin-bottom:46px;opacity:.28}
+.side .s .l{width:34px;height:4px;background:var(--teal);margin-bottom:16px}
+.side .s .t{font-size:44px;color:var(--navy)}
+.side .s .d{font-size:26px;color:var(--mute);margin-top:8px}
+.pill{display:inline-block;background:var(--navy);color:#fff;border-radius:40px;padding:12px 36px;font-size:34px}
+.per{position:absolute;top:330px;width:500px;height:600px}
+.per .q{margin-top:28px;font-size:36px;color:var(--navy);line-height:1.4}
+.per .q:before{content:"“";color:var(--teal);font-size:70px;line-height:0;vertical-align:-24px;margin-right:6px}
+.per .a{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 28px;font-size:25px;line-height:1.6;color:var(--ink);box-shadow:0 14px 30px rgba(31,58,95,.07)}
+.per .a b{color:var(--teal2)}
+.step3{position:absolute;top:560px;width:470px;height:250px;background:#fff;border:1px solid var(--line);border-radius:24px;text-align:center;padding-top:44px}
+.step3 .t{font-size:52px;color:var(--navy)}.step3 .d{font-size:28px;color:var(--mute);margin-top:18px;line-height:1.5}
+.loop{position:absolute;top:900px;left:0;right:0;text-align:center;font-size:30px;color:var(--mute)}
+.loop span{display:inline-block;padding:8px 24px;border-radius:30px;background:var(--tealbg);color:var(--teal2);margin:0 6px}
+.loop span.ai{background:var(--navy);color:#fff}
+.h1,.h2,.voice,.tobe,.band,.way .t,.side .s .t,.pill,.step3 .t,.big,b{-webkit-text-stroke:.03em currentColor}
+.dot-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(31,58,95,.07) 2px,transparent 2px);background-size:36px 36px}
+</style></head><body>
+<div class="dot-grid"></div>
+
+<!-- S1 Title 0-9 -->
+<div class="sc" id="s1">
+  <div class="abs kicker" id="s1k" style="left:160px;top:330px">Mobility &amp; Marketing 本部 · 職務教育 AI Tutor</div>
+  <div class="abs h1" id="s1t" style="left:160px;top:395px;color:var(--navy)">M&amp;M <span style="color:var(--teal)">AiQ+</span></div>
+  <div class="abs" id="s1v" style="left:800px;top:468px;font-size:40px;color:var(--teal)">Ver. 1.0</div>
+  <div class="abs" id="s1bar" style="left:160px;top:545px;height:8px;width:0;background:linear-gradient(90deg,var(--teal) 30%,#9AA8BD 30%)"></div>
+  <div class="abs sub" id="s1s" style="left:160px;top:590px">いつでも・どこでも、そばで<span style="color:var(--navy)">問いかけ、答えるAIチューター</span></div>
+  <div class="hub" id="s1hub" style="left:1460px;top:540px;width:360px;height:360px;margin:-180px 0 0 -180px"><div style="font-size:24px;letter-spacing:4px;opacity:.85">AI CORE</div><div class="big" style="font-size:66px;margin-top:6px">AiQ+</div><div style="font-size:22px;letter-spacing:4px;margin-top:6px;opacity:.85">ALWAYS ON</div></div>
+</div>
+
+<!-- S2 WHY 9-23 -->
+<div class="sc" id="s2">
+  <div class="abs kicker" id="s2k" style="left:160px;top:110px">01 · WHY</div>
+  <div class="abs h2" id="s2t" style="left:160px;top:160px">これまでの教育には、課題がありました</div>
+  <div class="abs" id="s2l" style="left:160px;top:290px;font-size:30px;color:var(--teal)">[ 社員の声 ]</div>
+  <div class="abs" id="s2l2" style="left:1140px;top:290px;font-size:30px;color:var(--teal)">[ TO-BE ]</div>
+  <div class="voice" id="v1" style="top:350px">「集合研修、また集まるんですか？」</div>
+  <div class="voice" id="v2" style="top:510px">「知っている話を何度も聞き、疑問は聞けない」</div>
+  <div class="voice" id="v3" style="top:670px">「何が分からないのか、誰に聞けばいいのかも…」</div>
+  <div class="arrow" id="a1" style="top:358px">→</div><div class="arrow" id="a2" style="top:518px">→</div><div class="arrow" id="a3" style="top:678px">→</div>
+  <div class="tobe" id="t1" style="top:350px">必要な時に、すぐ学べる</div>
+  <div class="tobe" id="t2" style="top:510px">自分のレベルで、必要な内容だけ</div>
+  <div class="tobe" id="t3" style="top:670px">迷った時は、最適な科目設計で</div>
+  <div class="band" id="s2b" style="top:880px">必要な瞬間に、必要な知識を、一人ひとりの目線に合わせて</div>
+</div>
+
+<!-- S3 Socratic 23-33 -->
+<div class="sc" id="s3">
+  <div class="abs kicker" id="s3k" style="left:160px;top:200px">02 · WHAT</div>
+  <div class="abs h2" id="s3t" style="left:160px;top:255px;font-size:84px">だから、<span style="color:var(--teal)">AI Tutor</span>を<br>つくりました</div>
+  <div class="card" id="c1" style="left:160px;top:560px;width:760px;height:260px"><div style="font-size:24px;color:var(--teal);letter-spacing:3px">HOW IT TEACHES</div><div class="big" style="font-size:52px;color:var(--navy);margin-top:14px">ソクラテス式</div><div style="font-size:32px;color:var(--mute);margin-top:14px">すぐに答えを与えず、問い返して自ら気づかせる</div></div>
+  <div class="card" id="c2" style="left:1000px;top:560px;width:760px;height:260px"><div style="font-size:24px;color:var(--teal);letter-spacing:3px">HOW IT FITS</div><div class="big" style="font-size:52px;color:var(--navy);margin-top:14px">レベルに合わせて</div><div style="font-size:32px;color:var(--mute);margin-top:14px">レベルを診断し、ちょうどいい深さで</div></div>
+  <div class="abs" id="peng" style="left:1500px;top:170px;font-size:180px;line-height:1">🐧</div>
+  <div class="abs" id="pengt" style="left:1250px;top:390px;font-size:30px;color:var(--mute)">ソクラテス式AIチューター <b style="color:var(--navy)">「ペン君」</b></div>
+</div>
+
+<!-- S4 12 subjects 33-45 -->
+<div class="sc" id="s4">
+  <div class="abs kicker" id="s4k" style="left:160px;top:90px">ONE HUB · 12 SUBJECTS</div>
+  <div class="abs h2" id="s4t" style="left:160px;top:140px;font-size:56px">M&amp;M共通の<span style="color:var(--teal)">12の職務科目</span>を、ひとつのAI Tutorに</div>
+  <svg class="abs" id="lines" style="left:0;top:0" width="1920" height="1080"></svg>
+  <div class="hub" id="hub"><div class="big" style="font-size:52px">M&amp;M</div><div class="big" style="font-size:52px">AiQ+</div><div style="font-size:22px;margin-top:8px;background:rgba(255,255,255,.2);padding:4px 16px;border-radius:20px">知識 12 / 12</div></div>
+  <div id="nodes"></div>
+  <div class="band" id="s4b" style="top:950px;padding:22px 44px;font-size:36px">科目の境界を越えて（Boundary-Crossing）、質問の文脈まで読み解きます</div>
+</div>
+
+<!-- S5 3 ways 45-55 -->
+<div class="sc" id="s5">
+  <div class="abs kicker" id="s5k" style="left:160px;top:150px">3つの学習スタイル</div>
+  <div class="abs h2" id="s5t" style="left:160px;top:200px">学ぶ、聞く、コーチングを受けるAIチューター</div>
+  <div class="way" id="w1" style="left:160px"><div class="as">AS-WAS<br>「全員が同じ講義を受ける」</div><div class="bx"><div class="no">WAY 01</div><div class="t">学ぶ 📖</div><div class="d">科目を選び、レベル別に学習</div></div></div>
+  <div class="way" id="w2" style="left:710px"><div class="as">AS-WAS<br>「疑問があっても聞く場所がない」</div><div class="bx"><div class="no">WAY 02</div><div class="t">聞く 💬</div><div class="d">業務中の疑問をすぐ質問</div></div></div>
+  <div class="way" id="w3" style="left:1260px"><div class="as">AS-WAS<br>「何から学べばいいか分からない」</div><div class="bx"><div class="no">WAY 03</div><div class="t">コーチング 🧭</div><div class="d">自分に合ったカリキュラムを提案</div></div></div>
+</div>
+
+<!-- S6 Chat demo 55-73 -->
+<div class="sc" id="s6">
+  <div class="abs kicker" id="s6k" style="left:160px;top:150px">03 · HOW · 学ぶ</div>
+  <div class="side" style="top:260px">
+    <div class="s" id="sd1"><div class="l"></div><div class="t">科目選択</div><div class="d">12の職務科目から選ぶ</div></div>
+    <div class="s" id="sd2"><div class="l"></div><div class="t">ソクラテス式学習</div><div class="d">レベルに合わせた問答を一歩ずつ</div></div>
+    <div class="s" id="sd3"><div class="l"></div><div class="t">学習のまとめ</div><div class="d">理解度レポートを発行</div></div>
+  </div>
+  <div class="chat" id="chat"><div class="bar">🐧&nbsp; M&amp;M ソクラテス式 AI Tutor</div>
+    <div class="msgs" id="msgs">
+      <div class="msg" id="m1"><div class="me">12番を学習したい</div></div>
+      <div class="msg" id="m2"><div class="bot"><div class="av">🐧</div><div class="tx">科目12「<b>自社の工程・製品の理解</b>」を始めましょう！<br>お客様に<em>「最近、燃料の品質に問題があるのでは？」</em>と言われたら、<br>工程を知る営業担当と知らない営業担当では、対応がどう変わるでしょうか？</div></div></div>
+      <div class="msg" id="m3"><div class="me">決められた規格で生産されていることを強調して対応できます</div></div>
+      <div class="msg" id="m4"><div class="bot"><div class="av">🐧</div><div class="tx">まさに核心を突いていますね！✨ もう一歩踏み込んでみましょう。<br>そう伝えるには、<em>最低限どんな工程・製品知識</em>が必要でしょうか？</div></div></div>
+      <div class="msg" id="m5"><div class="bot"><div class="av">📋</div><div class="tx"><b>最終理解度レポート</b><br>精製工程メカニズムの理解度 <em id="sc1">0</em> / 100 &nbsp;·&nbsp; 工程×経済価値の推論 <em id="sc2">0</em> / 100<br>次のおすすめ学習 → <b>ブレンディング工程・応用</b></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- S7 Personas 73-89 -->
+<div class="sc" id="s7">
+  <div class="abs kicker" id="s7k" style="left:160px;top:110px">活用事例 · それぞれの現場で</div>
+  <div class="abs h2" id="s7t" style="left:160px;top:160px"><span style="color:var(--teal)">すぐに</span>取り出して使える<span style="color:var(--teal)">知識</span></div>
+  <div class="per" id="p1" style="left:160px"><span class="pill">新入社員</span><div class="q">パートナーから与信枠の増額を相談された</div><div class="a">総枠 = 担保枠 + 信用枠<br>現状確認 → 増額検討 → <b>個別稟議</b><br>+ パートナーへの伝え方まで案内</div></div>
+  <div class="per" id="p2" style="left:710px"><span class="pill">SM</span><div class="q">安全点検、何か変わったような…？</div><div class="a">紙 → <b>巡回点検アプリ＆ダッシュボード</b><br>位置情報点検 · 写真 · 電子署名<br>変更された規定をすぐに案内</div></div>
+  <div class="per" id="p3" style="left:1260px"><span class="pill">チーム長 · 支社長</span><div class="q">パートナー訪問の前に、地域の状況を教えて</div><div class="a">周辺平均は全国比 <b>30〜44ウォン↓</b><br>7日連続の下落 · 最安値の競合状況<br>商談で使える話し方まで整理</div></div>
+</div>
+
+<!-- S8 Individual 89-99 -->
+<div class="sc" id="s8">
+  <div class="abs kicker" id="s8k" style="left:160px;top:170px">学習者ニーズ中心</div>
+  <div class="abs" id="s8a" style="left:160px;top:230px;font-size:56px;color:var(--mute)">One Curriculum for Everyone</div>
+  <div class="abs" id="s8b" style="left:160px;top:310px;font-size:76px;color:var(--teal)"><span class="big">→ One Curriculum for Every Individual</span></div>
+  <div class="step3" id="e1" style="left:160px"><div class="t">概念学習</div><div class="d">基本知識は<br>業務の中ですぐに</div></div>
+  <div class="step3" id="e2" style="left:725px;background:var(--navy);border:none"><div class="t" style="color:#fff">集中・深化</div><div class="d" style="color:#C9D6E8">実践的な応用は対面で<br>ケース · ディスカッション</div></div>
+  <div class="step3" id="e3" style="left:1290px"><div class="t">復習 · 質問</div><div class="d">学習後も<br>いつでも・どこでも</div></div>
+  <div class="abs" id="ea1" style="left:640px;top:650px;font-size:60px;color:var(--teal)">→</div>
+  <div class="abs" id="ea2" style="left:1205px;top:650px;font-size:60px;color:var(--teal)">→</div>
+  <div class="abs" id="s8c" style="left:0;right:0;top:880px;text-align:center;font-size:40px;color:var(--navy)">事前に学び · 深く固め · いつでも再活用</div>
+</div>
+
+<!-- S9 Expansion 99-110 -->
+<div class="sc" id="s9">
+  <div class="abs kicker" id="s9k" style="left:160px;top:110px">04 · 展開</div>
+  <div class="abs h2" id="s9t" style="left:160px;top:160px">社内で始まったAIチューターを、<span style="color:var(--teal)">パートナー教育</span>へ</div>
+  <div class="card" id="x1" style="left:160px;top:330px;width:760px;height:420px"><span style="display:inline-block;background:var(--navy);color:#fff;border-radius:30px;padding:8px 26px;font-size:24px;letter-spacing:2px">FOR INTERNAL</span>
+    <div class="big" style="font-size:46px;color:var(--navy);margin-top:24px">社員向け職務教育</div>
+    <div style="font-size:30px;color:var(--mute);margin-top:22px;line-height:1.7">M&amp;M本部の社員<br><b style="color:var(--navy)">12の職務科目</b> · 順次拡大予定<br>社内公開 · 活用中</div></div>
+  <div class="card" id="x2" style="left:1000px;top:330px;width:760px;height:420px;border:2px solid var(--teal)"><span style="display:inline-block;background:var(--teal);color:#fff;border-radius:30px;padding:8px 26px;font-size:24px;letter-spacing:2px">FOR PARTNER</span>
+    <div class="big" style="font-size:46px;color:var(--navy);margin-top:24px">Partner Academy</div>
+    <div style="font-size:30px;color:var(--mute);margin-top:22px;line-height:1.7">給油所パートナー<br><b style="color:var(--teal2)">経営実務 8科目</b> · 施設安全・法規・労務 ほか<br>外部公開・運用を準備中</div></div>
+  <div class="loop" id="loop" style="top:820px"><span>Knowledge In</span> → <span class="ai">AI</span> → <span>Knowledge Out</span> → <span>Use</span> → <span>Feedback</span> → <span>Loop</span></div>
+  <div class="abs" id="s9c" style="left:0;right:0;top:910px;text-align:center;font-size:32px;color:var(--mute)">教育資料に加え、基幹システム（SAP · ER · FAMS）との連携で活用度を高めます</div>
+</div>
+
+<!-- S10 Closing 110-120 -->
+<div class="sc" id="s10">
+  <div class="hub" id="s10hub" style="left:960px;top:330px;width:240px;height:240px;margin:-120px 0 0 -120px"><div class="big" style="font-size:36px">M&amp;M</div><div class="big" style="font-size:52px">AiQ+</div></div>
+  <div class="abs" id="s10a" style="left:0;right:0;top:560px;text-align:center;font-size:96px;color:var(--navy)"><span class="big">問いかけ、学び、積み重ねる。</span></div>
+  <div class="abs" id="s10b" style="left:0;right:0;top:700px;text-align:center;font-size:40px;color:var(--mute)">AI Tutorは始まりにすぎません。本当の資産は、その下に積み重なる<span style="color:var(--teal)">知識</span>です</div>
+  <div class="abs" id="s10c" style="left:0;right:0;top:850px;text-align:center;font-size:30px;color:var(--mute);letter-spacing:3px">Mobility &amp; Marketing 本部 · 職務教育 AI Tutor</div>
+</div>
+
+<div class="abs" id="fade" style="inset:0;background:#fff;opacity:1"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const vis=(t,a,b,d=.6)=>Math.min(cl((t-a)/d),cl((b-t)/d));
+function enter(el,t,a,{d=.8,dy=36,dx=0,s=0}={}){const p=eo((t-a)/d);el.style.opacity=p;el.style.transform=`translate(${dx*(1-p)}px,${dy*(1-p)}px) scale(${1-s*(1-p)})`;}
+const SC=[['s1',0,9.2],['s2',9,23.2],['s3',23,33.2],['s4',33,45.2],['s5',45,55.2],['s6',55,73.2],['s7',73,89.2],['s8',89,99.2],['s9',99,110.2],['s10',110,121]];
+// 12 nodes around hub
+const SUBJ=['M&M 経済性評価の理解','M&M 本部損益の理解','Pricing・価格政策','与信・担保設定','SAP活用法_受注/債権','事故債権管理・法的手続き',
+ '給油所 営業施設管理','自社マーケティング施策','Network開発プロセス','CC制度・パートナープラス','重大災害処罰法と安全管理','自社の工程・製品の理解'];
+const POS=[]; const cx=960, cy=600;
+SUBJ.forEach((s,i)=>{const col=i%3, row=Math.floor(i/3); // 4 rows x 3 cols layout around
+  const x=[400,960,1520][col], y=[330,490,710,870][row]; POS.push([col===1?(row<2?x:x):x, y]);});
+// put middle column nodes away from hub: rows 1,2 of middle column move outward
+POS[4]=[960,330]; POS[1]=[960,330];
+const L=[[400,300],[960,300],[1520,300],[400,460],[1520,460],[400,620],[1520,620],[400,780],[1520,780],[400,940-30],[960,900],[1520,910]];
+$('nodes').innerHTML=SUBJ.map((s,i)=>`<div class="node" id="n${i}" style="left:${L[i][0]}px;top:${L[i][1]}px"><b>${String(i+1).padStart(2,'0')}</b>${s}</div>`).join('');
+$('lines').innerHTML=L.map((p,i)=>`<line id="ln${i}" x1="${cx}" y1="${cy}" x2="${p[0]}" y2="${p[1]}" stroke="#13A89E" stroke-width="2.5" stroke-dasharray="8 8" opacity=".55"/>`).join('');
+function render(t){
+  $('fade').style.opacity=Math.max(1-cl(t/1.0),cl((t-118.6)/1.4));
+  for(const [id,a,b] of SC) $(id).style.opacity=vis(t,a,b,.6);
+  // S1
+  enter($('s1k'),t,.9); enter($('s1t'),t,1.4,{d:1,dy:50}); enter($('s1v'),t,2.4,{dx:-20,dy:0});
+  $('s1bar').style.width=(820*eio((t-2.2)/1.4))+'px'; enter($('s1s'),t,3.2);
+  enter($('s1hub'),t,1.8,{dy:0,s:.3,d:1.2}); $('s1hub').style.boxShadow=`0 0 0 ${22+10*Math.sin(t*1.6)}px rgba(19,168,158,.15),0 0 0 ${48+16*Math.sin(t*1.6)}px rgba(19,168,158,.07)`;
+  // S2
+  enter($('s2k'),t,9.3); enter($('s2t'),t,9.6); enter($('s2l'),t,10.4);
+  ['v1','v2','v3'].forEach((id,i)=>enter($(id),t,10.8+i*1.4,{dx:-50,dy:0}));
+  enter($('s2l2'),t,15.2);
+  ['a1','a2','a3'].forEach((id,i)=>enter($(id),t,15.4+i*.9,{dx:-30,dy:0}));
+  ['t1','t2','t3'].forEach((id,i)=>enter($(id),t,15.7+i*.9,{dx:50,dy:0}));
+  enter($('s2b'),t,18.8);
+  // S3
+  enter($('s3k'),t,23.3); enter($('s3t'),t,23.6,{dy:50});
+  enter($('peng'),t,24.6,{dy:60,s:.2}); $('peng').style.transform+=` rotate(${4*Math.sin(t*2)}deg)`; enter($('pengt'),t,25.4);
+  enter($('c1'),t,26.4,{dy:60}); enter($('c2'),t,27.4,{dy:60});
+  // S4
+  enter($('s4k'),t,33.3); enter($('s4t'),t,33.6);
+  enter($('hub'),t,34.2,{dy:0,s:.4,d:1});
+  for(let i=0;i<12;i++){const a=35+i*.3; enter($('n'+i),t,a,{dy:0,s:.3,d:.5});
+    const ln=$('ln'+i); const p=eo((t-a+.2)/.6); ln.setAttribute('x2',cx+(L[i][0]-cx)*p); ln.setAttribute('y2',cy+(L[i][1]-cy)*p); ln.setAttribute('stroke-dashoffset',-t*20);}
+  $('hub').style.boxShadow=`0 0 0 ${22+8*Math.sin(t*1.6)}px rgba(19,168,158,.15),0 0 0 ${46+14*Math.sin(t*1.6)}px rgba(19,168,158,.07)`;
+  enter($('s4b'),t,40.5);
+  // S5
+  enter($('s5k'),t,45.3); enter($('s5t'),t,45.6);
+  ['w1','w2','w3'].forEach((id,i)=>enter($(id),t,46.6+i*1.0,{dy:70}));
+  // S6 chat
+  enter($('s6k'),t,55.3); enter($('chat'),t,55.5,{dy:60,s:.03});
+  const sds=[[56,62],[62,69.5],[69.5,74]];
+  sds.forEach(([a,b],i)=>{$('sd'+(i+1)).style.opacity=(t>=a&&t<b)?1:.28;});
+  const MS=[['m1',56.6],['m2',58.2],['m3',62.0],['m4',63.8],['m5',67.4]];
+  MS.forEach(([id,a])=>enter($(id),t,a,{dy:30,d:.5}));
+  // scroll chat upward as messages accumulate
+  const sc=40*0+ (t>66.8? -eo((t-66.8)/.8)*330 : 0) + (t>63.4? -eo((t-63.4)/.8)*170:0);
+  $('msgs').style.transform=`translateY(${sc}px)`;
+  $('sc1').textContent=Math.round(88*eo((t-68)/1.4)); $('sc2').textContent=Math.round(90*eo((t-68.2)/1.4));
+  // S7
+  enter($('s7k'),t,73.3); enter($('s7t'),t,73.6,{dy:40});
+  ['p1','p2','p3'].forEach((id,i)=>{enter($(id),t,74.8+i*3.6,{dy:60});
+    const a=$(id).querySelector('.a'); const p=eo((t-(76.2+i*3.6))/.8); a.style.opacity=p; a.style.transform=`translateY(${20*(1-p)}px)`;});
+  // S8
+  enter($('s8k'),t,89.3); enter($('s8a'),t,89.6); enter($('s8b'),t,90.8,{dx:-40,dy:0});
+  enter($('e1'),t,92.2,{dy:50}); enter($('ea1'),t,92.9,{dx:-20,dy:0}); enter($('e2'),t,93.2,{dy:50}); enter($('ea2'),t,93.9,{dx:-20,dy:0}); enter($('e3'),t,94.2,{dy:50});
+  enter($('s8c'),t,95.6);
+  // S9
+  enter($('s9k'),t,99.3); enter($('s9t'),t,99.6);
+  enter($('x1'),t,100.6,{dx:-50,dy:0}); enter($('x2'),t,101.8,{dx:50,dy:0});
+  enter($('loop'),t,103.6); enter($('s9c'),t,105);
+  // S10
+  enter($('s10hub'),t,110.4,{dy:0,s:.4,d:1}); $('s10hub').style.boxShadow=`0 0 0 ${18+8*Math.sin(t*1.6)}px rgba(19,168,158,.15),0 0 0 ${40+14*Math.sin(t*1.6)}px rgba(19,168,158,.07)`;
+  enter($('s10a'),t,111.4,{dy:40,d:1}); enter($('s10b'),t,113); enter($('s10c'),t,114.2);
+}
+window.render=render; render(0);
+</script>
+</body></html>
