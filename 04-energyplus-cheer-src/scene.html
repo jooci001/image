@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>에너지플러스 응원 10s</title>
+<style>
+@font-face{font-family:"Pretendard";src:url(fonts/PretendardVariable.ttf) format("truetype");font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:5402px;overflow:hidden;font-family:"Pretendard","Noto Color Emoji",sans-serif;color:#fff;background:#FF8A00}
+#bg{position:absolute;inset:0;background:linear-gradient(180deg,#FFC93C 0%,#FF9F1C 28%,#FF6B35 58%,#F5426C 84%,#D63384 100%)}
+#rays{position:absolute;left:960px;top:900px;width:0;height:0}
+#rays i{position:absolute;left:0;top:0;width:3600px;height:180px;margin-top:-90px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(255,255,255,.28),rgba(255,255,255,0));clip-path:polygon(0 50%,100% 0,100% 100%)}
+#sun{position:absolute;left:960px;top:900px;width:620px;height:620px;margin:-310px 0 0 -310px;border-radius:50%;background:radial-gradient(circle,#FFF6C8 0%,#FFE066 45%,rgba(255,224,102,0) 72%)}
+.p{position:absolute;border-radius:50%;background:rgba(255,255,255,.55)}
+.line{position:absolute;left:0;right:0;text-align:center;font-weight:900;letter-spacing:-.03em;line-height:1;text-shadow:0 14px 0 rgba(150,40,40,.18),0 30px 60px rgba(120,20,40,.25);white-space:nowrap}
+.emo{position:absolute;font-size:260px;line-height:1}
+#badge{position:absolute;left:960px;top:900px;width:440px;height:440px;margin:-220px 0 0 -220px;border-radius:50%;background:#fff;color:#FF6B35;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(160,60,0,.35)}
+#badge .bolt{font-size:200px;line-height:1}
+#badge .w{font-size:64px;font-weight:900;letter-spacing:-.02em;margin-top:4px}
+#bat{position:absolute;left:460px;top:4380px;width:1000px;height:400px}
+#bat .shell{position:absolute;left:0;top:0;width:920px;height:400px;border:22px solid #fff;border-radius:70px}
+#bat .cap{position:absolute;left:920px;top:120px;width:70px;height:160px;background:#fff;border-radius:0 30px 30px 0}
+#bat .fill{position:absolute;left:44px;top:44px;height:312px;width:0;border-radius:36px;background:linear-gradient(90deg,#7CFFB2,#2EE59D)}
+#bat .pct{position:absolute;left:0;width:920px;top:0;height:400px;display:flex;align-items:center;justify-content:center;font-size:170px;font-weight:900;color:#fff;text-shadow:0 8px 24px rgba(0,80,40,.35)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#tag{position:absolute;left:0;right:0;top:4920px;text-align:center;font-size:86px;font-weight:800;letter-spacing:.02em;opacity:.95}
+.cf{position:absolute;width:44px;height:22px;border-radius:6px}
+</style></head><body>
+<div id="bg"></div>
+<div id="rays"></div>
+<div id="sun"></div>
+<div id="parts"></div>
+<div id="badge"><div class="bolt">⚡</div><div class="w">에너지플러스</div></div>
+
+<div class="line" id="l1" style="top:1560px;font-size:330px">안녕하세요!</div>
+<div class="emo" id="e1" style="left:1500px;top:1300px">👋</div>
+
+<div class="line" id="l2" style="top:2140px;font-size:250px">오늘 하루도</div>
+<div class="line" id="l3" style="top:2440px;font-size:290px;color:#FFF3B0">파이팅하세요!</div>
+<div class="emo" id="e2" style="left:120px;top:2760px">💪</div>
+
+<div class="line" id="l4" style="top:3260px;font-size:230px">에너지플러스가</div>
+<div class="line" id="l5" style="top:3540px;font-size:280px">응원합니다</div>
+<div class="emo" id="e3" style="left:1560px;top:3820px">💛</div>
+
+<div id="bat"><div class="shell"></div><div class="cap"></div><div class="fill" id="fill"></div><div class="pct" id="pct">0%</div></div>
+<div id="tag">TODAY'S ENERGY · FULL CHARGE</div>
+<svg id="wave" style="position:absolute;left:0;top:5120px" width="1920" height="282" viewBox="0 0 1920 282"><path id="wp1" fill="rgba(255,255,255,.18)"/><path id="wp2" fill="rgba(255,255,255,.12)"/></svg>
+<div id="conf"></div>
+<div id="flash"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const cl=x=>Math.max(0,Math.min(1,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+// overshoot ease for bouncy pops
+const back=x=>{x=cl(x);const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+let seed=7; const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+// rays
+$('rays').innerHTML=Array.from({length:16},(_,i)=>`<i style="transform:rotate(${i*22.5}deg)"></i>`).join('');
+// rising particles
+const P=Array.from({length:70},()=>({x:rnd()*1920,y:rnd()*5402,r:10+rnd()*34,v:180+rnd()*420,ph:rnd()*6.28,a:.25+rnd()*.5}));
+$('parts').innerHTML=P.map((p,i)=>`<div class="p" id="p${i}" style="width:${p.r*2}px;height:${p.r*2}px"></div>`).join('');
+// confetti
+const CC=['#FFF3B0','#7CFFB2','#5DB5FF','#FFFFFF','#FF9FCB','#FFE066'];
+const C=Array.from({length:120},()=>({x:960+(rnd()-.5)*300,y:4580,vx:(rnd()-.5)*2600,vy:-(1800+rnd()*2600),rot:rnd()*360,vr:(rnd()-.5)*900,c:CC[Math.floor(rnd()*CC.length)]}));
+$('conf').innerHTML=C.map((c,i)=>`<div class="cf" id="c${i}" style="background:${c.c}"></div>`).join('');
+function pop(el,t,a,{d=.7,dy=120}={}){const p=cl((t-a)/d);const s=back(p);el.style.opacity=cl((t-a)/.25);el.style.transform=`translateY(${dy*(1-eo(p))}px) scale(${.4+.6*s})`;}
+function render(t){
+  $('bg').style.opacity=1;
+  $('rays').style.transform=`rotate(${t*9}deg)`; $('rays').style.opacity=.55+.25*Math.sin(t*2);
+  $('sun').style.transform=`scale(${1+.06*Math.sin(t*2.4)})`;
+  P.forEach((p,i)=>{const y=((p.y-p.v*t)%5600+5600)%5600-100; const x=p.x+40*Math.sin(t*1.3+p.ph);
+    const e=$('p'+i); e.style.transform=`translate(${x}px,${y}px)`; e.style.opacity=p.a*cl(t/.8);});
+  // badge
+  pop($('badge'),t,.2,{d:.8,dy:0}); $('badge').style.transform+=` rotate(${-8*Math.sin(t*3)*cl((t-.2)/1)}deg)`;
+  // lines
+  pop($('l1'),t,.7); pop($('e1'),t,1.1,{dy:0}); $('e1').style.transform+=` rotate(${22*Math.sin(t*9)}deg)`;
+  pop($('l2'),t,2.1); pop($('l3'),t,2.6,{d:.8});
+  $('l3').style.transform+=` scale(${1+.035*Math.max(0,Math.sin((t-3.6)*5))*cl(t-3.6)})`;
+  pop($('e2'),t,3.0,{dy:0}); $('e2').style.transform+=` translateY(${-30*Math.abs(Math.sin(t*5))}px)`;
+  pop($('l4'),t,4.3); pop($('l5'),t,4.8,{d:.8}); pop($('e3'),t,5.3,{dy:0}); $('e3').style.transform+=` scale(${1+.12*Math.max(0,Math.sin(t*7))})`;
+  // battery
+  const b=$('bat'); b.style.opacity=cl((t-5.4)/.4); b.style.transform=`translateY(${60*(1-eo((t-5.4)/.6))}px)`;
+  const f=eo((t-5.9)/2.0); $('fill').style.width=(832*f)+'px'; $('pct').textContent=Math.round(100*f)+'%';
+  $('fill').style.background= f<.35? 'linear-gradient(90deg,#FFE066,#FFC93C)' : 'linear-gradient(90deg,#7CFFB2,#2EE59D)';
+  $('tag').style.opacity=.95*cl((t-6.2)/.6);
+  // flash at full charge
+  $('flash').style.opacity=.55*Math.max(0,1-Math.abs(t-7.95)/.25);
+  // confetti from 7.9
+  const ct=t-7.9;
+  C.forEach((c,i)=>{const e=$('c'+i); if(ct<0){e.style.opacity=0;return;}
+    const x=c.x+c.vx*ct, y=c.y+c.vy*ct+1800*ct*ct; e.style.opacity=cl(1-(ct-1.6)/.5);
+    e.style.transform=`translate(${x}px,${y}px) rotate(${c.rot+c.vr*ct}deg)`;});
+  const wv=(ph,amp,base)=>{let d=`M0 282 L0 ${base}`;for(let x=0;x<=1920;x+=40)d+=` L${x} ${base+amp*Math.sin(x/220+ph)}`;return d+' L1920 282 Z';};
+  $('wp1').setAttribute('d',wv(t*2.2,26,90)); $('wp2').setAttribute('d',wv(-t*1.7+1,34,140));
+}
+window.render=render; render(0);
+</script>
+</body></html>
